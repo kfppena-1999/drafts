@@ -1,4 +1,4 @@
-async function checkCredentials() {
+function checkCredentials() {
     const username = document.getElementById("user-input").value.trim();
     const password = document.getElementById("pass-input").value.trim();
 
@@ -7,23 +7,13 @@ async function checkCredentials() {
         return;
     }
 
-    const response = await fetch("/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: username, password: password })
-    });
-    const data = await response.json();
-
-    if (!response.ok) {
-        alert(data.message);
-        return;
-    }
-
-    alert("Login successful, Welcome!");
-
-    if (data.role === "mentor") {
+    if (username === "Mentor" && password === "12345") {
+        alert("Login successful, Welcome!");
         window.location.href = "teacher.html";
-    } else {
+    } else if (username === "Student" && password === "12345") {
+        alert("Login successful, Welcome!" );
         window.location.href = "student.html";
+    } else {
+        alert("Invalid username or password.");
     }
 }
