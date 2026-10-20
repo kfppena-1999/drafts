@@ -50,3 +50,54 @@ function() {
         "Terminal Assessment: Rizal and Contemporary Philippine Society Presentation (Deadline: November 25, 2026)";
 
 };
+
+const bookingRows = document.getElementById("booking-rows");
+
+try {
+    const bookings = JSON.parse(localStorage.getItem("edukonek.bookings") || "[]");
+    if (!Array.isArray(bookings)) {
+        throw new Error("Saved bookings are not in the expected format.");
+    }
+
+    if (bookings.length === 0) {
+        const row = document.createElement("tr");
+        const cell = document.createElement("td");
+        cell.colSpan = 5;
+        cell.textContent = "No bookings made yet.";
+        row.appendChild(cell);
+        bookingRows.appendChild(row);
+    }
+
+    bookings.forEach((booking) => {
+        const row = document.createElement("tr");
+        const date = new Date(`${booking.date}T00:00:00`);
+        const values = [
+            booking.course,
+            Number.isNaN(date.getTime()) ? booking.date : date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+            }),
+            booking.time,
+            booking.instructor,
+            booking.status
+        ];
+
+        values.forEach((value) => {
+            const cell = document.createElement("td");
+            cell.textContent = value;
+            row.appendChild(cell);
+        });
+
+        bookingRows.appendChild(row);
+    });
+} catch (error) {
+    console.error("Unable to load saved bookings.", error);
+
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.colSpan = 5;
+    cell.textContent = "Unable to load saved bookings.";
+    row.appendChild(cell);
+    bookingRows.appendChild(row);
+}

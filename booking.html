@@ -34,7 +34,7 @@
                 <h2>Available Schedules</h2>
                 <p>Book a new mentoring session with your instructors.</p>
             
-                <form class="booking-form">      
+                <form class="booking-form">
                     <label for="course-select">Select Course</label>
                     <select id="course-select" name="course" onchange="updateMentorName()">
                         <option value="Computer Programming">Computer Programming</option>
@@ -46,21 +46,21 @@
                     <input type="text" id="mentor-field" class="mentor-input" value="Ms. Susan Abella" readonly>
 
                     <label for="booking-date">Date</label>
-                    <input type="date" id="booking-date" value="2026-09-01">
+                    <input type="date" id="booking-date" value="2026-09-01" required>
 
                     <label>Select Time Slot</label>
                     <div class="schedule-container">
-                        <div class="schedule-row booked">
-                            <label><input type="checkbox" disabled> 9:00 AM - 9:15 AM</label>
-                            <span class="status-text">Booked</span>
-                        </div>
-                        <div class="schedule-row available active-slot">
-                            <label><input type="checkbox"> 1:30 PM - 1:45 PM</label>
+                        <div class="schedule-row available">
+                            <label><input type="radio" name="time-slot" value="9:00 AM - 9:15 AM" required> 9:00 AM - 9:15 AM</label>
                             <span class="status-text">Available</span>
                         </div>
-                        <div class="schedule-row booked">
-                            <label><input type="checkbox" disabled> 8:00 PM - 8:15 PM</label>
-                            <span class="status-text">Booked</span>
+                        <div class="schedule-row available">
+                            <label><input type="radio" name="time-slot" value="1:30 PM - 1:45 PM"> 1:30 PM - 1:45 PM</label>
+                            <span class="status-text">Available</span>
+                        </div>
+                        <div class="schedule-row available">
+                            <label><input type="radio" name="time-slot" value="8:00 PM - 8:15 PM"> 8:00 PM - 8:15 PM</label>
+                            <span class="status-text">Available</span>
                         </div>
                     </div>
                     <br>

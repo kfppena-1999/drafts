@@ -11,7 +11,7 @@ Karina Fae Peña,
 Maria Leorrie Dipus
 
 # EduKonek URL 
-https://kfppena-1999.github.io/drafts/
+https://lrmldipus-glitch.github.io/A3101-WST-Group24-EduKonek/index.html
 
 # Login Credentials:
 

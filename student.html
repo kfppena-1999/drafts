@@ -73,27 +73,16 @@
             <h2>My Bookings</h2>
             <p>View and manage your confirmed or pending mentoring sessions.</p>
             <table class="sessions-table">
-                <tr>
-                    <th>Course</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Instructor</th>
-                    <th>Status</th>
-                </tr>
-                <tr>
-                    <td>Computer Programming</td>
-                    <td>September 1, 2026</td>
-                    <td>9:00 AM - 9:15 AM</td>
-                    <td>Ms. Susan Abella</td>
-                    <td>Confirmed</td>
-                </tr>
-                <tr>
-                    <td>Computer Programming</td>
-                    <td>September 2, 2026</td>
-                    <td>1:00 PM - 1:15 PM</td>
-                    <td>Ms. Susan Abella</td>
-                    <td>Pending</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Instructor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="booking-rows"></tbody>
             </table>
         </section>
 
